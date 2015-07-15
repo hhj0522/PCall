@@ -30,7 +30,7 @@ public class MainActivity extends FragmentActivity {
     /*Fragment索引*/
     private int index;
     /*当前Fragment索引*/
-    private int currentTabIndex=0;
+    private int currentTabIndex = 0;
     /*标题文本*/
     private TextView titleTv;
 
@@ -45,7 +45,7 @@ public class MainActivity extends FragmentActivity {
         reportFragment = new ReportFragment();
         settingFragment = new SettingFragment();
         personFragment = new PersonFragment();
-        fragments = new Fragment[] { helpFragment,reportFragment, settingFragment, personFragment };
+        fragments = new Fragment[]{helpFragment, reportFragment, settingFragment, personFragment};
         // 添加显示第一个fragment
         getSupportFragmentManager().beginTransaction().add(R.id.fragment_help, helpFragment).add(R.id.fragment_help, reportFragment)
                 .add(R.id.fragment_help, settingFragment)
@@ -56,7 +56,7 @@ public class MainActivity extends FragmentActivity {
      * 初始化组件
      * by Hankkin at:2015年7月13日 17:46:49
      */
-    private void initViews(){
+    private void initViews() {
 
         mTabs = new ImageView[4];
         mTabs[0] = (ImageView) findViewById(R.id.help_iv);
@@ -72,9 +72,10 @@ public class MainActivity extends FragmentActivity {
     /**
      * 底部导航栏按钮切换事件
      * by Hankkin at:2015年7月13日 17:47:18
+     *
      * @param view
      */
-    public void onTabClicked(View view){
+    public void onTabClicked(View view) {
         switch (view.getId()) {
 
             case R.id.rl_help:
@@ -106,8 +107,6 @@ public class MainActivity extends FragmentActivity {
         mTabs[index].setSelected(true);
         currentTabIndex = index;
     }
-
-
 
 
 }

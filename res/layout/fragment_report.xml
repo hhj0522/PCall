@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_weight="1"
+                  android:orientation="vertical"
+                  android:layout_height="0dp">
+    <Button
+            android:id="@+id/btn_report_loc"
+            android:text="定位到当前位置"
+            android:background="@drawable/list_gray_item1"
+            android:textSize="@dimen/normal_textSize"
+            android:textColor="@color/black"
+            android:padding="@dimen/small_space"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/height_divider"
+            android:background="@drawable/list_item_divide_operate" />
+    <Button
+            android:layout_marginTop="@dimen/smaller_space"
+            android:id="@+id/btn_report_alarm"
+            android:text="报警原因"
+            android:background="@drawable/list_gray_item1"
+            android:textSize="@dimen/normal_textSize"
+            android:textColor="@color/black"
+            android:padding="@dimen/small_space"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/height_divider"
+            android:background="@drawable/list_item_divide_operate" />
+    <EditText
+            android:hint="详情描述"
+            android:layout_margin="@dimen/small_space"
+            android:background="@drawable/popbox_bg"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:orientation="vertical"
+                  android:layout_height="wrap_content">
+    <Button
+            android:gravity="center"
+            android:text="上报信息"
+            android:layout_marginBottom="@dimen/smaller_space"
+            android:textColor="@color/white"
+            android:textSize="@dimen/big_textSize"
+            android:background="@color/new_theme_red"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"/>
+    </LinearLayout>
+</LinearLayout>

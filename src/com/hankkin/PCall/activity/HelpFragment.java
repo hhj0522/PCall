@@ -18,6 +18,7 @@ import com.baidu.mapapi.map.MyLocationConfiguration.LocationMode;
 import com.baidu.mapapi.model.LatLng;
 import com.hankkin.PCall.R;
 import com.hankkin.PCall.dialog.AlterDialog;
+import com.hankkin.PCall.util.CheckHasNet;
 import com.hankkin.PCall.util.HelpAssistor;
 import com.hankkin.PCall.util.ToastUtils;
 
@@ -49,8 +50,9 @@ public class HelpFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         SDKInitializer.initialize(getActivity().getApplicationContext());
-        return inflater.inflate(R.layout.fragment_help,container,false);
+        return inflater.inflate(R.layout.fragment_help, container, false);
     }
+
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         frgInstance = this;
@@ -60,9 +62,9 @@ public class HelpFragment extends Fragment {
         HelpAssistor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlterDialog.showAlertView(getActivity(),"温馨提示",
+                AlterDialog.showAlertView(getActivity(), "温馨提示",
                         "您确定要一键求助吗？", "确定", null,
-                        new String[] { "取消" }, null).show();
+                        new String[]{"取消"}, null).show();
             }
         });
         initViews();
@@ -98,9 +100,11 @@ public class HelpFragment extends Fragment {
 
     /**
      * 初始化组件
-     * b Hankkin at:2015年7月15日 22:39:40
+     * by Hankkin at:2015年7月15日 22:39:40
+     * 增加网络判断
+     * by Hankkin at:2015年7月15日 23:25:51
      */
-    private void initViews(){
+    private void initViews() {
         btnLocWay = (Button) getActivity().findViewById(R.id.btn_help_locway);
         tvLocInfo = (TextView) getActivity().findViewById(R.id.tv_help_locinfo);
         mCurrentMode = LocationMode.NORMAL;
@@ -111,18 +115,22 @@ public class HelpFragment extends Fragment {
         // 开启定位图层
         mBaiduMap.setMyLocationEnabled(true);
         // 定位初始化
-        mLocClient = new LocationClient(getActivity());
-        mLocClient.registerLocationListener(myListener);
-        LocationClientOption option = new LocationClientOption();
-        option.setOpenGps(true);// 打开gps
-        option.setCoorType("bd09ll"); // 设置坐标类型
-        option.setScanSpan(1000);
-        option.setAddrType("all");  //设置获取位置信息，若不设置address为null
-        mLocClient.setLocOption(option);
-        mLocClient.start();
-
-
+        if (CheckHasNet.isMobileNet(getActivity().getApplicationContext()) || CheckHasNet.isNetWorkOk(getActivity().getApplicationContext())) {
+            mLocClient = new LocationClient(getActivity());
+            mLocClient.registerLocationListener(myListener);
+            LocationClientOption option = new LocationClientOption();
+            option.setOpenGps(true);// 打开gps
+            option.setCoorType("bd09ll"); // 设置坐标类型
+            option.setScanSpan(1000);
+            option.setAddrType("all");  //设置获取位置信息，若不设置address为null
+            mLocClient.setLocOption(option);
+            mLocClient.start();
+        }
+        else {
+            ToastUtils.showLToast(getActivity().getApplicationContext(),"网络异常，请稍后重试");
+        }
     }
+
     /**
      * 定位SDK监听函数
      * by Hankkin at:2015年7月14日 21:28:12
@@ -158,12 +166,12 @@ public class HelpFragment extends Fragment {
             sb.append(location.getLongitude());
             sb.append("\nRadius : ");
             sb.append(location.getRadius());
-            if (location.getLocType() == BDLocation.TypeGpsLocation){
+            if (location.getLocType() == BDLocation.TypeGpsLocation) {
                 sb.append("\nSpeed : ");
                 sb.append(location.getSpeed());
                 sb.append("\nSatellite : ");
                 sb.append(location.getSatelliteNumber());
-            } else if (location.getLocType() == BDLocation.TypeNetWorkLocation){
+            } else if (location.getLocType() == BDLocation.TypeNetWorkLocation) {
                 sb.append("\nAddress : ");
                 sb.append(location.getAddrStr());
             }
