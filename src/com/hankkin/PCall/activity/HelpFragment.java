@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
@@ -18,6 +19,7 @@ import com.baidu.mapapi.model.LatLng;
 import com.hankkin.PCall.R;
 import com.hankkin.PCall.dialog.AlterDialog;
 import com.hankkin.PCall.util.HelpAssistor;
+import com.hankkin.PCall.util.ToastUtils;
 
 /**
  * Created by Hankkin on 2015/7/13.
@@ -40,6 +42,8 @@ public class HelpFragment extends Fragment {
     private boolean isFirstLoc = true;
 
     private HelpFragment frgInstance;
+    /*定位信息文本*/
+    private TextView tvLocInfo;
 
 
     @Override
@@ -61,9 +65,7 @@ public class HelpFragment extends Fragment {
                         new String[] { "取消" }, null).show();
             }
         });
-        btnLocWay = (Button) getActivity().findViewById(R.id.btn_help_locway);
-        mCurrentMode = LocationMode.NORMAL;
-        btnLocWay.setText("普通");
+        initViews();
         View.OnClickListener btnClickListener = new View.OnClickListener() {
             public void onClick(View v) {
                 switch (mCurrentMode) {
@@ -92,8 +94,17 @@ public class HelpFragment extends Fragment {
             }
         };
         btnLocWay.setOnClickListener(btnClickListener);
+    }
 
-
+    /**
+     * 初始化组件
+     * b Hankkin at:2015年7月15日 22:39:40
+     */
+    private void initViews(){
+        btnLocWay = (Button) getActivity().findViewById(R.id.btn_help_locway);
+        tvLocInfo = (TextView) getActivity().findViewById(R.id.tv_help_locinfo);
+        mCurrentMode = LocationMode.NORMAL;
+        btnLocWay.setText("普通");
         // 地图初始化
         mMapView = (MapView) getActivity().findViewById(R.id.bmapView);
         mBaiduMap = mMapView.getMap();
@@ -106,8 +117,11 @@ public class HelpFragment extends Fragment {
         option.setOpenGps(true);// 打开gps
         option.setCoorType("bd09ll"); // 设置坐标类型
         option.setScanSpan(1000);
+        option.setAddrType("all");  //设置获取位置信息，若不设置address为null
         mLocClient.setLocOption(option);
         mLocClient.start();
+
+
     }
     /**
      * 定位SDK监听函数
@@ -133,6 +147,27 @@ public class HelpFragment extends Fragment {
                 MapStatusUpdate u = MapStatusUpdateFactory.newLatLng(ll);
                 mBaiduMap.animateMapStatus(u);
             }
+            StringBuffer sb = new StringBuffer(256);
+            sb.append("Time : ");
+            sb.append(location.getTime());
+            sb.append("\nError code : ");
+            sb.append(location.getLocType());
+            sb.append("\nLatitude : ");
+            sb.append(location.getLatitude());
+            sb.append("\nLontitude : ");
+            sb.append(location.getLongitude());
+            sb.append("\nRadius : ");
+            sb.append(location.getRadius());
+            if (location.getLocType() == BDLocation.TypeGpsLocation){
+                sb.append("\nSpeed : ");
+                sb.append(location.getSpeed());
+                sb.append("\nSatellite : ");
+                sb.append(location.getSatelliteNumber());
+            } else if (location.getLocType() == BDLocation.TypeNetWorkLocation){
+                sb.append("\nAddress : ");
+                sb.append(location.getAddrStr());
+            }
+            tvLocInfo.setText(sb.toString());
         }
 
         public void onReceivePoi(BDLocation poiLocation) {
