@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#FFFFFF</color>
+    <color name="brown">#c9a379</color>
+    <color name="deepgray">#bf262626</color>
+    <color name="yellow">#FFF7D23E</color>
+    <color name="gray">#adadad</color>
+    <color name="transparentgray">#ee373737</color>
+    <color name="blue">#00e</color>
+    <color name="lightblue">#0080fb</color>
+    <color name="lightwhite">#fddbdbdb</color>
+    <color name="red">#e00</color>
+    <color name="green">#33cc40</color>
+    <color name="lightgreen">#ff05cec3</color>
+    <color name="deepgreen">#6bce52</color>
+    <color name="deepred">#ff3333</color>
+    <color name="gold">#f66000</color>
+    <!-- 紫色 -->
+    <color name="purple">#ff880088</color>
+    <!-- 粉红色 -->
+    <color name="pink">#FFC0CB</color>
+    <!-- 亮粉红色 -->
+    <color name="lightpink">#FFB6C1</color>
+    <!-- 深粉红色 -->
+    <color name="deeppink">#FF1493</color>
+    <color name="transparent">#00000000</color>
+    <color name="translucent">#dd000000</color>
+    <color name="halftransparent">#b0000000</color>
+    <color name="black">#000000</color>
+    <color name="deep_black">#ff000000</color>
+    <!--登录底部文字颜色-->
+    <color name="login_bottom_text">#666</color>
+    <color name="needsms_kefu">#fa9303</color>
+
+    <color name="add_contact_banckground">#f7f7f7</color>
+    <color name="sg_rz">#eef6fe</color>
+
+    <color name="new_theme_red">#d23e3e</color>
+    <color name="pro_manage_green">#77c033</color>
+    <color name="slideMenu_left_text_color">#4a4a4a</color>
+    <color name="slideMenu_divider_color">#cccccc</color>
+    <color name="index_column_title_color">#6e6e6e</color>
+    <color name="index_column_bg_color">#eff3f6</color>
+    <color name="app_main_tab_text_color">#999999</color>
+    <color name="dialog_divider_color">#ffe0e0e0</color>
+
+
+    <!-- 分栏按钮样式-->
+    <color name="radio_button_selected_color">#ff33b5e5</color>
+    <color name="radio_button_unselected_color">@android:color/transparent</color>
+    <color name="btn_background_transpent">#00000000</color>
+    <color name="bg_tabbar">#f5f5f7</color>
+    <color name="normal_bg_tab_btn">#f5f5f7</color>
+    <color name="cl_bg_tab_btn">#107fa2e6</color>
+</resources>
