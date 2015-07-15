@@ -16,8 +16,8 @@ import com.baidu.mapapi.map.*;
 import com.baidu.mapapi.map.MyLocationConfiguration.LocationMode;
 import com.baidu.mapapi.model.LatLng;
 import com.hankkin.PCall.R;
+import com.hankkin.PCall.dialog.AlterDialog;
 import com.hankkin.PCall.util.HelpAssistor;
-import com.hankkin.PCall.util.ToastUtils;
 
 /**
  * Created by Hankkin on 2015/7/13.
@@ -56,7 +56,9 @@ public class HelpFragment extends Fragment {
         HelpAssistor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ToastUtils.showLToast(getActivity().getApplicationContext(), "一键求助");
+                AlterDialog.showAlertView(getActivity(),"温馨提示",
+                        "您确定要一键求助吗？", "确定", null,
+                        new String[] { "取消" }, null).show();
             }
         });
         btnLocWay = (Button) getActivity().findViewById(R.id.btn_help_locway);
