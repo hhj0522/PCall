@@ -11,10 +11,12 @@
     <Button
             android:id="@+id/btn_report_loc"
             android:text="定位到当前位置"
+            android:drawableLeft="@drawable/umeng_socialize_location_mark"
             android:background="@drawable/list_gray_item1"
             android:textSize="@dimen/normal_textSize"
             android:textColor="@color/black"
             android:padding="@dimen/small_space"
+            android:gravity="left"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     <ImageView
@@ -22,13 +24,16 @@
             android:layout_height="@dimen/height_divider"
             android:background="@drawable/list_item_divide_operate" />
     <Button
-            android:layout_marginTop="@dimen/smaller_space"
             android:id="@+id/btn_report_alarm"
             android:text="报警原因"
+            android:drawablePadding="@dimen/tiny_space"
+            android:layout_marginLeft="@dimen/tinyest_space"
+            android:drawableLeft="@drawable/down_arrow"
             android:background="@drawable/list_gray_item1"
             android:textSize="@dimen/normal_textSize"
             android:textColor="@color/black"
             android:padding="@dimen/small_space"
+            android:gravity="left"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     <ImageView
@@ -37,6 +42,7 @@
             android:background="@drawable/list_item_divide_operate" />
     <EditText
             android:hint="详情描述"
+            android:gravity="top"
             android:layout_margin="@dimen/small_space"
             android:background="@drawable/popbox_bg"
             android:layout_width="match_parent"

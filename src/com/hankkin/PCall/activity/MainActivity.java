@@ -72,10 +72,9 @@ public class MainActivity extends FragmentActivity {
     /**
      * 底部导航栏按钮切换事件
      * by Hankkin at:2015年7月13日 17:47:18
-     *
      * @param view
      */
-    public void onTabClicked(View view) {
+    public void onTabClicked(View view){
         switch (view.getId()) {
 
             case R.id.rl_help:
@@ -107,6 +106,4 @@ public class MainActivity extends FragmentActivity {
         mTabs[index].setSelected(true);
         currentTabIndex = index;
     }
-
-
 }

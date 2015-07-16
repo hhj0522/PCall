@@ -125,9 +125,8 @@ public class HelpFragment extends Fragment {
             option.setAddrType("all");  //设置获取位置信息，若不设置address为null
             mLocClient.setLocOption(option);
             mLocClient.start();
-        }
-        else {
-            ToastUtils.showLToast(getActivity().getApplicationContext(),"网络异常，请稍后重试");
+        } else {
+            ToastUtils.showLToast(getActivity().getApplicationContext(), "网络异常，请稍后重试");
         }
     }
 
