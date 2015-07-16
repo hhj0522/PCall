@@ -51,24 +51,6 @@ public class MainActivity extends FragmentActivity {
                 .add(R.id.fragment_help, settingFragment)
                 .hide(settingFragment).hide(reportFragment).show(helpFragment).commit();
     }
-
-    /**
-     * 初始化组件
-     * by Hankkin at:2015年7月13日 17:46:49
-     */
-    private void initViews() {
-
-        mTabs = new ImageView[4];
-        mTabs[0] = (ImageView) findViewById(R.id.help_iv);
-        mTabs[1] = (ImageView) findViewById(R.id.report_iv);
-        mTabs[2] = (ImageView) findViewById(R.id.setting_iv);
-        mTabs[3] = (ImageView) findViewById(R.id.person_iv);
-        mTabs[0].setSelected(true);
-
-        /*MainActivity标题栏*/
-        titleTv = (TextView) findViewById(R.id.title_tv);
-    }
-
     /**
      * 底部导航栏按钮切换事件
      * by Hankkin at:2015年7月13日 17:47:18
@@ -106,4 +88,21 @@ public class MainActivity extends FragmentActivity {
         mTabs[index].setSelected(true);
         currentTabIndex = index;
     }
+    /**
+     * 初始化组件
+     * by Hankkin at:2015年7月13日 17:46:49
+     */
+    private void initViews() {
+
+        mTabs = new ImageView[4];
+        mTabs[0] = (ImageView) findViewById(R.id.help_iv);
+        mTabs[1] = (ImageView) findViewById(R.id.report_iv);
+        mTabs[2] = (ImageView) findViewById(R.id.setting_iv);
+        mTabs[3] = (ImageView) findViewById(R.id.person_iv);
+        mTabs[0].setSelected(true);
+
+        titleTv = (TextView) findViewById(R.id.title_tv);
+    }
+
+
 }

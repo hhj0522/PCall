@@ -19,10 +19,12 @@
 
 
         <LinearLayout
+                android:background="@drawable/list_gray_item1"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:padding="8dp"
+                android:gravity="center_horizontal"
                 >
             <TextView
                     android:layout_width="wrap_content"
@@ -32,7 +34,7 @@
                     android:id="@+id/tv_accident"
                     android:textSize="15dip"
                     android:gravity="center"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     />
         </LinearLayout>
         <TextView
@@ -42,10 +44,12 @@
                 />
 
         <LinearLayout
+                android:background="@drawable/list_gray_item1"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:padding="8dp"
+                android:gravity="center_horizontal"
                 >
             <TextView
                     android:id="@+id/tv_theft"
@@ -55,7 +59,7 @@
                     android:text="遭遇盗窃"
                     android:textSize="15dip"
                     android:gravity="center"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     />
         </LinearLayout>
         <TextView
@@ -65,10 +69,12 @@
                 />
 
         <LinearLayout
+                android:background="@drawable/list_gray_item1"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:padding="8dp"
+                android:gravity="center_horizontal"
                 >
             <TextView
                     android:layout_width="wrap_content"
@@ -78,7 +84,7 @@
                     android:id="@+id/tv_robbery"
                     android:textSize="15dip"
                     android:gravity="center"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     />
         </LinearLayout>
         <TextView
@@ -88,10 +94,12 @@
                 />
 
         <LinearLayout
+                android:background="@drawable/list_gray_item1"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:padding="8dp"
+                android:gravity="center_horizontal"
                 >
             <TextView
                     android:id="@+id/tv_gun"
@@ -101,7 +109,7 @@
                     android:text="涉枪案件"
                     android:textSize="15dip"
                     android:gravity="center"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     />
         </LinearLayout>
         <TextView
@@ -111,10 +119,12 @@
                 />
 
         <LinearLayout
+                android:background="@drawable/list_gray_item1"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:padding="8dp"
+                android:gravity="center_horizontal"
                 >
 
             <Button
@@ -126,7 +136,7 @@
                     android:textSize="15dip"
                     android:background="@null"
                     android:gravity="center"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     />
         </LinearLayout>
         <LinearLayout
@@ -134,6 +144,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:padding="8dp"
+                android:gravity="center_horizontal"
+                android:background="@drawable/list_gray_item1"
                 >
 
             <Button
@@ -145,7 +157,7 @@
                     android:textSize="15dip"
                     android:background="@null"
                     android:gravity="center"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     />
         </LinearLayout>
     </LinearLayout>

@@ -26,22 +26,13 @@ public class SelectWayPopWindow extends PopupWindow {
 		
 		int h = context.getWindowManager().getDefaultDisplay().getHeight();
 		int w = context.getWindowManager().getDefaultDisplay().getWidth();
-		//设置按钮监听
-		//设置SelectPicPopupWindow的View
 		this.setContentView(mMenuView);
-		//设置SelectPicPopupWindow弹出窗体的宽
 		this.setWidth(w/2+50);
-		//设置SelectPicPopupWindow弹出窗体的高
 		this.setHeight(LayoutParams.WRAP_CONTENT);
-		//设置SelectPicPopupWindow弹出窗体可点击
 		this.setFocusable(true);
-		//设置SelectPicPopupWindow弹出窗体动画效果
 		this.setAnimationStyle(R.style.mystyle);
-		//实例化一个ColorDrawable颜色为半透明
-		ColorDrawable dw = new ColorDrawable(0000000000);
-		//设置SelectPicPopupWindow弹出窗体的背景
+		ColorDrawable dw = new ColorDrawable(0xb0000000);
 		this.setBackgroundDrawable(dw);
-		//mMenuView添加OnTouchListener监听判断获取触屏位置如果在选择框外面则销毁弹出框
 		mMenuView.setOnTouchListener(new OnTouchListener() {
 			
 			public boolean onTouch(View v, MotionEvent event) {

@@ -54,7 +54,7 @@ public class ReportFragment extends Fragment implements View.OnClickListener {
     private void showSelectWayPop() {
         popWindow = new SelectWayPopWindow(getActivity(), itemsOnClick);
         //显示窗口
-        popWindow.showAtLocation(getActivity().findViewById(R.id.btn_report_alarm), Gravity.CENTER, 10, 230); //设置layout在PopupWindow中显示的位置
+        popWindow.showAtLocation(getActivity().findViewById(R.id.ll_report), Gravity.CENTER, 0, 0); //设置layout在PopupWindow中显示的位置
     }
 
     //为弹出窗口实现监听类
